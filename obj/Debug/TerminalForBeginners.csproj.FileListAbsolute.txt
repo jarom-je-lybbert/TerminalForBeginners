@@ -7,10 +7,14 @@ C:\Users\jarom\Documents\01BYU\CS 499 Senior Project\TerminalForBeginners\bin\De
 C:\Users\jarom\Documents\01BYU\CS 499 Senior Project\TerminalForBeginners\bin\Debug\ConsoleControlAPI.xml
 C:\Users\jarom\Documents\01BYU\CS 499 Senior Project\TerminalForBeginners\obj\Debug\TerminalForBeginners.csproj.AssemblyReference.cache
 C:\Users\jarom\Documents\01BYU\CS 499 Senior Project\TerminalForBeginners\obj\Debug\TerminalForBeginners.csproj.SuggestedBindingRedirects.cache
-C:\Users\jarom\Documents\01BYU\CS 499 Senior Project\TerminalForBeginners\obj\Debug\TerminalForBeginners.Form1.resources
 C:\Users\jarom\Documents\01BYU\CS 499 Senior Project\TerminalForBeginners\obj\Debug\TerminalForBeginners.Properties.Resources.resources
 C:\Users\jarom\Documents\01BYU\CS 499 Senior Project\TerminalForBeginners\obj\Debug\TerminalForBeginners.csproj.GenerateResource.cache
 C:\Users\jarom\Documents\01BYU\CS 499 Senior Project\TerminalForBeginners\obj\Debug\TerminalForBeginners.csproj.CoreCompileInputs.cache
 C:\Users\jarom\Documents\01BYU\CS 499 Senior Project\TerminalForBeginners\obj\Debug\TerminalForBeginners.csproj.CopyComplete
 C:\Users\jarom\Documents\01BYU\CS 499 Senior Project\TerminalForBeginners\obj\Debug\TerminalForBeginners.exe
 C:\Users\jarom\Documents\01BYU\CS 499 Senior Project\TerminalForBeginners\obj\Debug\TerminalForBeginners.pdb
+C:\Users\jarom\Documents\01BYU\CS 499 Senior Project\TerminalForBeginners\obj\Debug\TerminalForBeginners.MainForm.resources
+C:\Users\jarom\Documents\01BYU\CS 499 Senior Project\TerminalForBeginners\obj\Debug\TerminalForBeginners.Form2.resources
+C:\Users\jarom\Documents\01BYU\CS 499 Senior Project\TerminalForBeginners\obj\Debug\TerminalForBeginners.Form3.resources
+C:\Users\jarom\Documents\01BYU\CS 499 Senior Project\TerminalForBeginners\bin\Debug\Newtonsoft.Json.dll
+C:\Users\jarom\Documents\01BYU\CS 499 Senior Project\TerminalForBeginners\bin\Debug\Newtonsoft.Json.xml

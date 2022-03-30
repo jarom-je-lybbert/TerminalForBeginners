@@ -46,7 +46,7 @@
     
     mimetype: application/x-microsoft.net.object.binary.base64
     value   : The object must be serialized with 
-            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
     
     mimetype: application/x-microsoft.net.object.soap.base64
@@ -60,6 +60,7 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
@@ -68,9 +69,10 @@
               <xsd:sequence>
                 <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="name" use="required" type="xsd:string" />
               <xsd:attribute name="type" type="xsd:string" />
               <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
@@ -85,9 +87,10 @@
                 <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
                 <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
               <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
               <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
@@ -109,9 +112,282 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="commandData" xml:space="preserve">
+    <value>[
+    {
+        "Name" : "File Exploration",
+        "Commands" : [
+            {
+                "Command" : "cd",
+                "Description" : "Changes working directory to the given path.",
+                "Options" : [
+                    {
+                        "Name" : "Directory Path",
+                        "Text" : "",
+                        "Description" : "Path to the desired directory.",
+                        "TextBox" : true,
+                        "BrowseButton" : true
+                    }
+                ]
+            },
+            {
+                "Command" : "cd ..\\",
+                "Description" : "Changes working directory to the parent directory.",
+                "Options" : [
+                ]
+            },
+            {
+                "Command" : "cd \\",
+                "Description" : "Changes working directory to the root directory.",
+                "Options" : [
+                ]
+            },
+            {
+                "Command" : "dir",
+                "Description" : "Displays the contents of a directory. Displays the current directory by default or will display the given directory.",
+                "Options" : [
+                    {
+                        "Name" : "Directory Path",
+                        "Text" : "",
+                        "Description" : "Path to the desired directory.",
+                        "TextBox" : true,
+                        "BrowseButton" : true
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Name" : "File Management",
+        "Commands" : [
+            {
+                "Command" : "del",
+                "Description" : "Delete a file or directory",
+                "Options" : [
+                    {
+                        "Name" : "File Path",
+                        "Text" : "",
+                        "Description" : "Path to the desired file or directory for deletion.",
+                        "TextBox" : true,
+                        "BrowseButton" : true
+                    },
+                    {
+                        "Name" : "Recursive",
+                        "Text" : "-r",
+                        "Description" : "Also delete child directories and files.",
+                        "TextBox" : false,
+                        "BrowseButton" : false
+                    }
+                ]
+            },
+            {
+                "Command" : "mkdir",
+                "Description" : "Create a new directory.",
+                "Options" : [
+                    {
+                        "Name" : "File Path",
+                        "Text" : "",
+                        "Description" : "Path for the new directory.",
+                        "TextBox" : true,
+                        "BrowseButton" : false
+                    }
+                ]
+            },
+            {
+                "Command" : "rmdir",
+                "Description" : "Remove a directory.",
+                "Options" : [
+                    {
+                        "Name" : "File Path",
+                        "Text" : "",
+                        "Description" : "Path to the directory to be removed.",
+                        "TextBox" : true,
+                        "BrowseButton" : true
+                    }
+                ]
+            },
+            {
+                "Command" : "rename",
+                "Description" : "Rename a file or directory",
+                "Options" : [
+                    {
+                        "Name" : "File Path",
+                        "Text" : "",
+                        "Description" : "Path to file or directory to be renamed.",
+                        "TextBox" : true,
+                        "BrowseButton" : true
+                    },
+                    {
+                        "Name" : "New Filename",
+                        "Text" : "",
+                        "Description" : "New name to be given to desired file or directory.",
+                        "TextBox" : true,
+                        "BrowseButton" : false
+                    }
+                ]
+            },
+            {
+                "Command" : "findstr",
+                "Description" : "Find a string of text within a file.",
+                "Options" : [
+                    {
+                        "Name" : "Strings",
+                        "Text" : "",
+                        "Description" : "The text to be searched for in the given file.",
+                        "TextBox" : true,
+                        "BrowseButton" : false
+                    },
+                    {
+                        "Name" : "File Path",
+                        "Text" : "",
+                        "Description" : "The name of the file or directory to be searched in.",
+                        "TextBox" : true,
+                        "BrowseButton" : true
+                    }
+                ]
+            },
+            {
+                "Command" : "compact",
+                "Description" : "",
+                "Options" : [
+                    
+                ]
+            },
+            {
+                "Command" : "move",
+                "Description" : "",
+                "Options" : [
+                    
+                ]
+            },
+            {
+                "Command" : "copy",
+                "Description" : "",
+                "Options" : [
+                    
+                ]
+            }
+        ]
+    },
+    {
+        "Name" : "Network",
+        "Commands" : [
+            {
+                "Command" : "ping",
+                "Description" : "",
+                "Options" : [
+                    
+                ]
+            },
+            {
+                "Command" : "ipconfig",
+                "Description" : "",
+                "Options" : [
+                    
+                ]
+            },
+            {
+                "Command" : "getmac",
+                "Description" : "",
+                "Options" : [
+                    
+                ]
+            },
+            {
+                "Command" : "hostname",
+                "Description" : "",
+                "Options" : [
+                    
+                ]
+            },
+            {
+                "Command" : "nslookup",
+                "Description" : "",
+                "Options" : [
+                    
+                ]
+            },
+            {
+                "Command" : "tracert",
+                "Description" : "",
+                "Options" : [
+                    
+                ]
+            },
+            {
+                "Command" : "netstat",
+                "Description" : "",
+                "Options" : [
+                    
+                ]
+            },
+            {
+                "Command" : "arp",
+                "Description" : "",
+                "Options" : [
+                    
+                ]
+            },
+            {
+                "Command" : "pathping",
+                "Description" : "",
+                "Options" : [
+                    
+                ]
+            }
+        ]
+    },
+    {
+        "Name" : "System",
+        "Commands" : [
+            {
+                "Command" : "systeminfo",
+                "Description" : "",
+                "Options" : [
+                    {
+                        "Text" : "",
+                        "Description" : "",
+                        "TextBox" : false,
+                        "BrowseButton" : false
+                    }
+                ]
+            },
+            {
+                "Command" : "tasklist",
+                "Description" : "",
+                "Options" : [
+                    {
+                        "Text" : "",
+                        "Description" : "",
+                        "TextBox" : false,
+                        "BrowseButton" : false
+                    }
+                ]
+            },
+            {
+                "Command" : "taskkill",
+                "Description" : "",
+                "Options" : [
+                    {
+                        "Text" : "",
+                        "Description" : "",
+                        "TextBox" : false,
+                        "BrowseButton" : false
+                    }
+                ]
+            }
+        ]
+    }
+]</value>
+    <comment>JSON</comment>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="commmandData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\commmandData.json.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
 </root>
