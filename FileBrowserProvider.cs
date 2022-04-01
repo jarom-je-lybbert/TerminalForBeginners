@@ -92,6 +92,14 @@ namespace TerminalForBeginners
             return treeRootInfo.Parent != null;
         }
 
+        public string GetPathFromNode(TreeNode node)
+        {
+            int firstBackslashIndex = node.FullPath.IndexOf('\\');
+            if (firstBackslashIndex == -1)
+                return "";
+            return node.FullPath.Remove(0, firstBackslashIndex + 1);
+        }
+
         private void AddNodesFromDirectoryInfos(TreeNode nodeToAddTo, DirectoryInfo[] infos)
         {
             foreach (DirectoryInfo info in infos)
