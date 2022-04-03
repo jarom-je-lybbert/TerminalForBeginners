@@ -37,7 +37,7 @@
             this.fileView = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.button1 = new System.Windows.Forms.Button();
+            this.executeButton = new System.Windows.Forms.Button();
             this.stopButton = new System.Windows.Forms.Button();
             this.backButton = new System.Windows.Forms.Button();
             this.listBoxPanel = new System.Windows.Forms.Panel();
@@ -117,14 +117,14 @@
             this.columnHeader2.Text = "Type";
             this.columnHeader2.Width = 77;
             // 
-            // button1
+            // executeButton
             // 
-            this.button1.Location = new System.Drawing.Point(1730, 756);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(156, 31);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Execute";
-            this.button1.UseVisualStyleBackColor = true;
+            this.executeButton.Location = new System.Drawing.Point(1730, 756);
+            this.executeButton.Name = "executeButton";
+            this.executeButton.Size = new System.Drawing.Size(156, 31);
+            this.executeButton.TabIndex = 6;
+            this.executeButton.Text = "Execute";
+            this.executeButton.UseVisualStyleBackColor = true;
             // 
             // stopButton
             // 
@@ -160,7 +160,7 @@
             this.Controls.Add(this.listBoxPanel);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.stopButton);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.executeButton);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.consoleControl);
             this.Name = "MainForm";
@@ -183,7 +183,7 @@
         private System.Windows.Forms.ListView fileView;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button executeButton;
         private System.Windows.Forms.Button stopButton;
         private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.Panel listBoxPanel;

@@ -32,6 +32,7 @@ namespace TerminalForBeginners
         {
             if (info.Exists)
             {
+                WorkingDirectory = info;
                 TreeNode rootNode = new TreeNode(info.Name);
                 rootNode.Tag = info;
                 AddChildNodes(rootNode);
@@ -40,9 +41,17 @@ namespace TerminalForBeginners
             }
         }
 
-        public void ReRootTree(TreeNode node)
+        public void ReRootTree(string relativePath)
         {
-            PopulateTree((DirectoryInfo)node.Tag);
+            DirectoryInfo info;
+            try
+            {
+                info = new DirectoryInfo(WorkingDirectory.FullName + '\\' + relativePath);
+            }
+            catch (DirectoryNotFoundException ex)
+            { return; }
+            PopulateTree(info);
+            WorkingDirectory = info;
         }
 
         public void ReRootTreeToParent()
@@ -118,5 +127,13 @@ namespace TerminalForBeginners
             Tree.Nodes.Clear();
             Tree.Nodes.Add(node);
         }
+
+        public DirectoryInfo WorkingDirectory
+        {
+            get { return _workingDirectory; }
+            private set { _workingDirectory = value; }
+        }
+
+        private DirectoryInfo _workingDirectory;
     }
 }

@@ -36,13 +36,18 @@ namespace TerminalForBeginners
             this.FormClosing +=
                 new FormClosingEventHandler(this.FormClosingHandler);
             this.stopButton.Click += StopButton_Click;
+            this.executeButton.Click += ExecuteButton_Click;
+
 
             _consoleController = new ConsoleController(consoleControl);
+            _consoleController.OnDirChange += _consoleController_OnDirChange;
             _consoleController.StartConsole();
 
             _commandListManager = new CommandListManager();
             PopulateCommandLists();
         }
+
+        public delegate void DirChangeEventHandler(object sender, DirChangeArgs args);
 
         void directoryTree_NodeMouseClick(object sender,
         TreeNodeMouseClickEventArgs e)
@@ -87,22 +92,39 @@ namespace TerminalForBeginners
 
         void directoryTree_NodeDoubleMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
-            _fileBrowserProvider.ReRootTree(e.Node);
-            if (!backButton.Enabled && _fileBrowserProvider.RootHasParent())
+            string relativePath = _fileBrowserProvider.GetPathFromNode(e.Node);
+            _consoleController.ChangeDirectory(relativePath);
+        }
+
+        private void _consoleController_OnDirChange(object sender, DirChangeArgs args)
+        {
+            ChangeTreeRoot(args.RelativePath);
+        }
+
+        private void ChangeTreeRoot(string relativePath)
+        {
+            _fileBrowserProvider.ReRootTree(relativePath);
+            if (_fileBrowserProvider.RootHasParent())
                 backButton.Enabled = true;
+            else
+                backButton.Enabled = false;
         }
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            _fileBrowserProvider.ReRootTreeToParent();
-            if (!_fileBrowserProvider.RootHasParent())
-                backButton.Enabled = false;
+            _consoleController.PlaceConsoleInput("cd ..\\");
+            _consoleController.ChangeDirectory("..\\");
             updateFileView(directoryTree.Nodes[0]);
         }
 
         private void StopButton_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void ExecuteButton_Click(object sender, EventArgs e)
+        {
+            _consoleController.ExecuteFromConsole();
         }
 
         private void PopulateCommandLists()

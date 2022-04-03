@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DirChangeArgs.cs" />
     <Compile Include="CommandListManager.cs" />
     <Compile Include="CommandCollection.cs" />
     <Compile Include="OptionInfo.cs" />

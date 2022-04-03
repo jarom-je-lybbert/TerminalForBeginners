@@ -12,6 +12,8 @@ namespace TerminalForBeginners
     internal class ConsoleController
     {
         private readonly ConsoleControl.ConsoleControl consoleControl;
+        public delegate void DirChangeEventHandler(object sender, DirChangeArgs args);
+
 
         public ConsoleController()
         {
@@ -20,17 +22,16 @@ namespace TerminalForBeginners
 
         public ConsoleController(ConsoleControl.ConsoleControl consoleControl)
         {
-            inputStart = 0;
             this.consoleControl = consoleControl;
-            this.consoleControl.ProcessInterface.OnProcessOutput += ProcessInterface_OnProcessOutput;
+            this.consoleControl.OnConsoleInput += ConsoleControl_OnConsoleInput;
         }
 
-        private void ProcessInterface_OnProcessOutput(object sender, ConsoleControlAPI.ProcessEventArgs args)
+        private void ConsoleControl_OnConsoleInput(object sender, ConsoleControl.ConsoleEventArgs args)
         {
-            if (consoleControl.IsDisposed || consoleControl.InternalRichTextBox.IsDisposed)
-                return;
-
-            inputStart = consoleControl.InternalRichTextBox.SelectionStart;
+            if (args.Content.TrimStart().StartsWith("cd "))
+            {
+                FireOnDirChange(args.Content.TrimStart().Remove(0, 3));
+            }
         }
 
         public bool StartConsole()
@@ -48,7 +49,7 @@ namespace TerminalForBeginners
 
         public void ExecuteFromConsole()
         {
-            PlaceConsoleInput("{ENTER}", false);
+            consoleControl.WritePlacedInput();
         }
 
         public void StopConsoleExecution()
@@ -56,17 +57,16 @@ namespace TerminalForBeginners
             PlaceConsoleInput("^C", false);
         }
 
-        private void ClearConsoleInput()
+        public void ChangeDirectory(string relativePath)
         {
-            int numInputChars = consoleControl.InternalRichTextBox.TextLength - inputStart;
-            string backspaces = "";
-            for (int i = 0; i < numInputChars; i++)
-            {
-                backspaces += "{BS}";
-            }
-            SendKeys.SendWait(backspaces);
+            consoleControl.WriteInput("cd " + relativePath, Color.White, false);
         }
 
-        private int inputStart;
+        private void FireOnDirChange(string relativePath)
+        {
+            OnDirChange?.Invoke(this, new DirChangeArgs(relativePath));
+        }
+
+        public event DirChangeEventHandler OnDirChange;
     }
 }
