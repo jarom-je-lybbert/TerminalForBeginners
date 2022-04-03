@@ -3,8 +3,6 @@ C:\Users\jarom\Documents\01BYU\CS 499 Senior Project\TerminalForBeginners\bin\De
 C:\Users\jarom\Documents\01BYU\CS 499 Senior Project\TerminalForBeginners\bin\Debug\TerminalForBeginners.pdb
 C:\Users\jarom\Documents\01BYU\CS 499 Senior Project\TerminalForBeginners\bin\Debug\ConsoleControl.dll
 C:\Users\jarom\Documents\01BYU\CS 499 Senior Project\TerminalForBeginners\bin\Debug\ConsoleControlAPI.dll
-C:\Users\jarom\Documents\01BYU\CS 499 Senior Project\TerminalForBeginners\bin\Debug\ConsoleControl.xml
-C:\Users\jarom\Documents\01BYU\CS 499 Senior Project\TerminalForBeginners\bin\Debug\ConsoleControlAPI.xml
 C:\Users\jarom\Documents\01BYU\CS 499 Senior Project\TerminalForBeginners\obj\Debug\TerminalForBeginners.csproj.AssemblyReference.cache
 C:\Users\jarom\Documents\01BYU\CS 499 Senior Project\TerminalForBeginners\obj\Debug\TerminalForBeginners.csproj.SuggestedBindingRedirects.cache
 C:\Users\jarom\Documents\01BYU\CS 499 Senior Project\TerminalForBeginners\obj\Debug\TerminalForBeginners.Properties.Resources.resources
@@ -18,3 +16,5 @@ C:\Users\jarom\Documents\01BYU\CS 499 Senior Project\TerminalForBeginners\obj\De
 C:\Users\jarom\Documents\01BYU\CS 499 Senior Project\TerminalForBeginners\obj\Debug\TerminalForBeginners.Form3.resources
 C:\Users\jarom\Documents\01BYU\CS 499 Senior Project\TerminalForBeginners\bin\Debug\Newtonsoft.Json.dll
 C:\Users\jarom\Documents\01BYU\CS 499 Senior Project\TerminalForBeginners\bin\Debug\Newtonsoft.Json.xml
+C:\Users\jarom\Documents\01BYU\CS 499 Senior Project\TerminalForBeginners\bin\Debug\ConsoleControlAPI.pdb
+C:\Users\jarom\Documents\01BYU\CS 499 Senior Project\TerminalForBeginners\bin\Debug\ConsoleControl.pdb

@@ -35,13 +35,11 @@
   <PropertyGroup>
     <StartupObject />
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ConsoleControl, Version=1.3.0.0, Culture=neutral, PublicKeyToken=7edd23586f5e297f, processorArchitecture=MSIL">
-      <HintPath>packages\ConsoleControl.1.3.0\lib\net40-client\ConsoleControl.dll</HintPath>
-    </Reference>
-    <Reference Include="ConsoleControlAPI, Version=1.3.0.0, Culture=neutral, PublicKeyToken=7c86b8a36b9c33e2, processorArchitecture=MSIL">
-      <HintPath>packages\ConsoleControlAPI.1.3.0\lib\net40\ConsoleControlAPI.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -119,8 +117,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Console.ico" />
     <None Include="Resources\commmandData.json.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\consolecontrol\source\ConsoleControlAPI\ConsoleControlAPI.csproj">
+      <Project>{f353dbef-fc17-4ca4-9ce5-940e884ef5b5}</Project>
+      <Name>ConsoleControlAPI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\consolecontrol\source\ConsoleControl\ConsoleControl.csproj">
+      <Project>{4727b679-b6dd-4b79-a3df-95ea294fac9e}</Project>
+      <Name>ConsoleControl</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
