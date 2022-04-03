@@ -48,7 +48,7 @@ namespace TerminalForBeginners
         TreeNodeMouseClickEventArgs e)
         {
             TreeNode newSelected = e.Node;
-            _consoleController.PutConsoleInput("cd " + _fileBrowserProvider.GetPathFromNode(newSelected));
+            _consoleController.PlaceConsoleInput("cd " + _fileBrowserProvider.GetPathFromNode(newSelected));
             directoryTree.BeginUpdate();
             _fileBrowserProvider.AddGrandchildNodes(newSelected);
             directoryTree.EndUpdate();

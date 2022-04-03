@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace TerminalForBeginners
 {
@@ -40,26 +41,19 @@ namespace TerminalForBeginners
             return consoleControl.IsProcessRunning;
         }
 
-        public void PutConsoleInput(string consoleInput, bool replaceCurrent = true)
+        public void PlaceConsoleInput(string consoleInput, bool replaceCurrent = true)
         {
-            consoleControl.Invoke((Action)(() =>
-            {
-                consoleControl.InternalRichTextBox.Select();
-                if (replaceCurrent == true)
-                    ClearConsoleInput();
-                SendKeys.SendWait(consoleInput);
-            }
-            ));
+            consoleControl.PlaceInput(consoleInput, Color.White, replaceCurrent);
         }
 
         public void ExecuteFromConsole()
         {
-            PutConsoleInput("{ENTER}", false);
+            PlaceConsoleInput("{ENTER}", false);
         }
 
         public void StopConsoleExecution()
         {
-            PutConsoleInput("^C", false);
+            PlaceConsoleInput("^C", false);
         }
 
         private void ClearConsoleInput()
