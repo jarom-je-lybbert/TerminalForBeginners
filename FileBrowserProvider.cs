@@ -38,6 +38,7 @@ namespace TerminalForBeginners
                 AddChildNodes(rootNode);
                 AddGrandchildNodes(rootNode);
                 RootFileBrowser(rootNode);
+                rootNode.Expand();
             }
         }
 
@@ -51,14 +52,6 @@ namespace TerminalForBeginners
             catch (DirectoryNotFoundException ex)
             { return; }
             PopulateTree(info);
-            WorkingDirectory = info;
-        }
-
-        public void ReRootTreeToParent()
-        {
-            DirectoryInfo treeRootInfo = Tree.Nodes[0].Tag as DirectoryInfo;
-            DirectoryInfo parentDirInfo = treeRootInfo.Parent;
-            PopulateTree(parentDirInfo);
         }
 
         public void AddChildNodes(TreeNode node)

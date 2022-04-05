@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 using System.Drawing;
 
@@ -52,9 +52,9 @@ namespace TerminalForBeginners
             consoleControl.WritePlacedInput();
         }
 
-        public void StopConsoleExecution()
+        public void StopConsoleProgram()
         {
-            PlaceConsoleInput("^C", false);
+            consoleControl.SendStopSig();
         }
 
         public void ChangeDirectory(string relativePath)

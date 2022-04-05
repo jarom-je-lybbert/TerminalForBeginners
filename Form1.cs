@@ -116,7 +116,7 @@ namespace TerminalForBeginners
         private string GetFilePathFromListItem(ListViewItem item)
         {
             FileInfo info = (FileInfo)item.Tag;
-            return info.FullName.Remove(0, _fileBrowserProvider.WorkingDirectory.FullName.Length + 1);
+            return info.FullName.Remove(0, _fileBrowserProvider.WorkingDirectory.FullName.TrimEnd('\\').Length + 1);
         }
 
         private void directoryTree_NodeDoubleMouseClick(object sender, TreeNodeMouseClickEventArgs e)
@@ -148,7 +148,7 @@ namespace TerminalForBeginners
 
         private void StopButton_Click(object sender, EventArgs e)
         {
-            
+            _consoleController.StopConsoleProgram();
         }
 
         private void ExecuteButton_Click(object sender, EventArgs e)
