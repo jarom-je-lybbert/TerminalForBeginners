@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
@@ -23,6 +17,7 @@ namespace TerminalForBeginners
             InitializeComponent();
             _fileBrowserProvider = new FileBrowserProvider(this.directoryTree);
             _fileBrowserProvider.PopulateTree();
+
             this.directoryTree.NodeMouseClick +=
                 new TreeNodeMouseClickEventHandler(this.directoryTree_NodeMouseClick);
             this.directoryTree.NodeMouseDoubleClick +=

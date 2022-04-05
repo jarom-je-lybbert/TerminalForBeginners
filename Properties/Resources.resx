@@ -261,23 +261,76 @@
             },
             {
                 "Command" : "compact",
-                "Description" : "",
+                "Description" : "Displays or alters the compression of files or directories on NTFS partitions. If used without parameters, compact displays the compression state of the current directory and any files it contains.",
                 "Options" : [
-                    
+                    {
+                        "Name" : "Compress",
+                        "Text" : "/c",
+                        "Description" : "Compresses the specified directory or file.",
+                        "Required" : false,
+                        "NeedTextBox" : false,
+                        "NeedBrowseButton" : false
+                    },
+                    {
+                        "Name" : "Uncompress",
+                        "Text" : "/u",
+                        "Description" : "Uncompresses the specified directory or file.",
+                        "Required" : false,
+                        "NeedTextBox" : false,
+                        "NeedBrowseButton" : false
+                    },
+                    {
+                        "Name" : "Directory",
+                        "Text" : "/s",
+                        "Description" : "Performs the chosen operation on files in the specified directory and all subdirectories.",
+                        "Required" : false,
+                        "NeedTextBox" : true,
+                        "NeedBrowseButton" : true
+                    }
                 ]
             },
             {
                 "Command" : "move",
                 "Description" : "",
                 "Options" : [
-                    
+                    {
+                        "Name" : "Source File",
+                        "Text" : "",
+                        "Description" : "Specifies the path and name of the file(s) to move.",
+                        "Required" : true,
+                        "NeedTextBox" : true,
+                        "NeedBrowseButton" : true
+                    },
+                    {
+                        "Name" : "Target File",
+                        "Text" : "",
+                        "Description" : "Specifies the path and name to move files to.",
+                        "Required" : true,
+                        "NeedTextBox" : true,
+                        "NeedBrowseButton" : true
+                    }
                 ]
             },
             {
                 "Command" : "copy",
                 "Description" : "",
                 "Options" : [
-                    
+                    {
+                        "Name" : "Source",
+                        "Text" : "",
+                        "Description" : " Specifies the location from which you want to copy a file or set of files.",
+                        "Required" : true,
+                        "NeedTextBox" : true,
+                        "NeedBrowseButton" : true
+                    },
+                    {
+                        "Name" : "Destination",
+                        "Text" : "",
+                        "Description" : "Specifies the location to which you want to copy a file or set of files.",
+                        "Required" : true,
+                        "NeedTextBox" : true,
+                        "NeedBrowseButton" : true
+                    }
                 ]
             }
         ]
@@ -289,19 +342,33 @@
                 "Command" : "ping",
                 "Description" : "",
                 "Options" : [
-                    
+                    {
+                        "Name" : "Hostname",
+                        "Text" : "",
+                        "Description" : "Specifies the host name or IP address of the destination.",
+                        "Required" : true,
+                        "NeedTextBox" : true,
+                        "NeedBrowseButton" : false
+                    }
                 ]
             },
             {
                 "Command" : "ipconfig",
-                "Description" : "",
+                "Description" : "Displays all current TCP/IP network configuration values and refreshes Dynamic Host Configuration Protocol (DHCP) and Domain Name System (DNS) settings.",
                 "Options" : [
-                    
+                    {
+                        "Name" : "Show All",
+                        "Text" : "/all",
+                        "Description" : "Displays the full TCP/IP configuration for all adapters.",
+                        "Required" : false,
+                        "NeedTextBox" : false,
+                        "NeedBrowseButton" : false
+                    }
                 ]
             },
             {
                 "Command" : "getmac",
-                "Description" : "",
+                "Description" : "Returns the media access control (MAC) address and list of network protocols associated with each address for all network cards in each computer, either locally or across a network.",
                 "Options" : [
                     
                 ]
