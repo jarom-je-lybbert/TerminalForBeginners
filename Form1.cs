@@ -27,6 +27,8 @@ namespace TerminalForBeginners
                 new TreeNodeMouseClickEventHandler(this.directoryTree_NodeMouseClick);
             this.directoryTree.NodeMouseDoubleClick +=
                 new TreeNodeMouseClickEventHandler(this.directoryTree_NodeDoubleMouseClick);
+            this.fileView.ItemActivate += FileView_ItemActivate;
+            this.fileView.ItemSelectionChanged += FileView_ItemSelectionChanged;
             this.backButton.Click += BackButton_Click;
             if (_fileBrowserProvider.RootHasParent())
                 this.backButton.Enabled = true;
@@ -84,13 +86,40 @@ namespace TerminalForBeginners
                     { new ListViewItem.ListViewSubItem(item, "File")};
 
                 item.SubItems.AddRange(subItems);
+                item.Tag = file;
                 fileView.Items.Add(item);
             }
 
             fileView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
-        void directoryTree_NodeDoubleMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        private void FileView_ItemActivate(object sender, EventArgs e)
+        {
+            ListView listView = (ListView)sender;
+            _consoleController.PlaceConsoleInput(PutInQuotes(GetFilePathFromListItem(listView.SelectedItems[0])));
+            _consoleController.ExecuteFromConsole();
+        }
+
+        private void FileView_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            if (e.IsSelected)
+            {
+                _consoleController.PlaceConsoleInput(PutInQuotes(GetFilePathFromListItem(e.Item)));
+            }
+        }
+
+        private string PutInQuotes(string text)
+        {
+            return '"' + text + '"';
+        }
+
+        private string GetFilePathFromListItem(ListViewItem item)
+        {
+            FileInfo info = (FileInfo)item.Tag;
+            return info.FullName.Remove(0, _fileBrowserProvider.WorkingDirectory.FullName.Length + 1);
+        }
+
+        private void directoryTree_NodeDoubleMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
             string relativePath = _fileBrowserProvider.GetPathFromNode(e.Node);
             _consoleController.ChangeDirectory(relativePath);
