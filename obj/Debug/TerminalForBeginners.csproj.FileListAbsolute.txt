@@ -12,9 +12,9 @@ C:\Users\jarom\Documents\01BYU\CS 499 Senior Project\TerminalForBeginners\obj\De
 C:\Users\jarom\Documents\01BYU\CS 499 Senior Project\TerminalForBeginners\obj\Debug\TerminalForBeginners.exe
 C:\Users\jarom\Documents\01BYU\CS 499 Senior Project\TerminalForBeginners\obj\Debug\TerminalForBeginners.pdb
 C:\Users\jarom\Documents\01BYU\CS 499 Senior Project\TerminalForBeginners\obj\Debug\TerminalForBeginners.MainForm.resources
-C:\Users\jarom\Documents\01BYU\CS 499 Senior Project\TerminalForBeginners\obj\Debug\TerminalForBeginners.Form2.resources
 C:\Users\jarom\Documents\01BYU\CS 499 Senior Project\TerminalForBeginners\obj\Debug\TerminalForBeginners.Form3.resources
 C:\Users\jarom\Documents\01BYU\CS 499 Senior Project\TerminalForBeginners\bin\Debug\Newtonsoft.Json.dll
 C:\Users\jarom\Documents\01BYU\CS 499 Senior Project\TerminalForBeginners\bin\Debug\Newtonsoft.Json.xml
 C:\Users\jarom\Documents\01BYU\CS 499 Senior Project\TerminalForBeginners\bin\Debug\ConsoleControlAPI.pdb
 C:\Users\jarom\Documents\01BYU\CS 499 Senior Project\TerminalForBeginners\bin\Debug\ConsoleControl.pdb
+C:\Users\jarom\Documents\01BYU\CS 499 Senior Project\TerminalForBeginners\obj\Debug\TerminalForBeginners.CommandOptionsForm.resources

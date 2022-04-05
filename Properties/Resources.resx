@@ -130,8 +130,9 @@
                         "Name" : "Directory Path",
                         "Text" : "",
                         "Description" : "Path to the desired directory.",
-                        "TextBox" : true,
-                        "BrowseButton" : true
+                        "Required" : true,
+                        "NeedTextBox" : true,
+                        "NeedBrowseButton" : true
                     }
                 ]
             },
@@ -155,8 +156,8 @@
                         "Name" : "Directory Path",
                         "Text" : "",
                         "Description" : "Path to the desired directory.",
-                        "TextBox" : true,
-                        "BrowseButton" : true
+                        "NeedTextBox" : true,
+                        "NeedBrowseButton" : true
                     }
                 ]
             }
@@ -173,15 +174,16 @@
                         "Name" : "File Path",
                         "Text" : "",
                         "Description" : "Path to the desired file or directory for deletion.",
-                        "TextBox" : true,
-                        "BrowseButton" : true
+                        "Required" : true,
+                        "NeedTextBox" : true,
+                        "NeedBrowseButton" : true
                     },
                     {
                         "Name" : "Recursive",
                         "Text" : "-r",
                         "Description" : "Also delete child directories and files.",
-                        "TextBox" : false,
-                        "BrowseButton" : false
+                        "NeedTextBox" : false,
+                        "NeedBrowseButton" : false
                     }
                 ]
             },
@@ -193,8 +195,9 @@
                         "Name" : "File Path",
                         "Text" : "",
                         "Description" : "Path for the new directory.",
-                        "TextBox" : true,
-                        "BrowseButton" : false
+                        "Required" : true,
+                        "NeedTextBox" : true,
+                        "NeedBrowseButton" : false
                     }
                 ]
             },
@@ -206,8 +209,9 @@
                         "Name" : "File Path",
                         "Text" : "",
                         "Description" : "Path to the directory to be removed.",
-                        "TextBox" : true,
-                        "BrowseButton" : true
+                        "Required" : true,
+                        "NeedTextBox" : true,
+                        "NeedBrowseButton" : true
                     }
                 ]
             },
@@ -219,15 +223,17 @@
                         "Name" : "File Path",
                         "Text" : "",
                         "Description" : "Path to file or directory to be renamed.",
-                        "TextBox" : true,
-                        "BrowseButton" : true
+                        "Required" : true,
+                        "NeedTextBox" : true,
+                        "NeedBrowseButton" : true
                     },
                     {
                         "Name" : "New Filename",
                         "Text" : "",
                         "Description" : "New name to be given to desired file or directory.",
-                        "TextBox" : true,
-                        "BrowseButton" : false
+                        "Required" : true,
+                        "NeedTextBox" : true,
+                        "NeedBrowseButton" : false
                     }
                 ]
             },
@@ -239,15 +245,17 @@
                         "Name" : "Strings",
                         "Text" : "",
                         "Description" : "The text to be searched for in the given file.",
-                        "TextBox" : true,
-                        "BrowseButton" : false
+                        "Required" : true,
+                        "NeedTextBox" : true,
+                        "NeedBrowseButton" : false
                     },
                     {
                         "Name" : "File Path",
                         "Text" : "",
                         "Description" : "The name of the file or directory to be searched in.",
-                        "TextBox" : true,
-                        "BrowseButton" : true
+                        "Required" : true,
+                        "NeedTextBox" : true,
+                        "NeedBrowseButton" : true
                     }
                 ]
             },
@@ -352,8 +360,8 @@
                     {
                         "Text" : "",
                         "Description" : "",
-                        "TextBox" : false,
-                        "BrowseButton" : false
+                        "NeedTextBox" : false,
+                        "NeedBrowseButton" : false
                     }
                 ]
             },
@@ -364,8 +372,8 @@
                     {
                         "Text" : "",
                         "Description" : "",
-                        "TextBox" : false,
-                        "BrowseButton" : false
+                        "NeedTextBox" : false,
+                        "NeedBrowseButton" : false
                     }
                 ]
             },
@@ -376,8 +384,8 @@
                     {
                         "Text" : "",
                         "Description" : "",
-                        "TextBox" : false,
-                        "BrowseButton" : false
+                        "NeedTextBox" : false,
+                        "NeedBrowseButton" : false
                     }
                 ]
             }

@@ -79,18 +79,23 @@ namespace TerminalForBeginners
             ListViewItem.ListViewSubItem[] subItems;
             ListViewItem item = null;
 
-            foreach (FileInfo file in nodeDirInfo.GetFiles())
+            try
             {
-                item = new ListViewItem(file.Name, 1);
-                subItems = new ListViewItem.ListViewSubItem[]
-                    { new ListViewItem.ListViewSubItem(item, "File")};
+                foreach (FileInfo file in nodeDirInfo.GetFiles())
+                {
+                    item = new ListViewItem(file.Name, 1);
+                    subItems = new ListViewItem.ListViewSubItem[]
+                        { new ListViewItem.ListViewSubItem(item, "File")};
 
-                item.SubItems.AddRange(subItems);
-                item.Tag = file;
-                fileView.Items.Add(item);
+                    item.SubItems.AddRange(subItems);
+                    item.Tag = file;
+                    fileView.Items.Add(item);
+                }
+
+                fileView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
             }
-
-            fileView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            catch (DirectoryNotFoundException ex)
+            { }
         }
 
         private void FileView_ItemActivate(object sender, EventArgs e)
@@ -172,9 +177,19 @@ namespace TerminalForBeginners
                 listBoxPanel.Controls.Add(label);
                 commandCollection.SetupListBox(listBox, new Point(leftSide, label.Height), new Size(listWidth, listBoxPanel.Height - label.Height));
                 listBoxPanel.Controls.Add(listBox);
+                listBox.DoubleClick += ListBox_DoubleClick;
                 leftSide += distanceBetweenLists;
             }
         }
 
+        private void ListBox_DoubleClick(object sender, EventArgs e)
+        {
+            if (((ListBox)sender).SelectedItem != null)
+            {
+                CommandInfo commandInfo = (CommandInfo)((ListBox)sender).SelectedItem;
+                CommandOptionsForm commandOptionsForm = new CommandOptionsForm(commandInfo, _consoleController);
+                DialogResult dialogResult = commandOptionsForm.ShowDialog();
+            }
+        }
     }
 }

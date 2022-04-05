@@ -1,19 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace TerminalForBeginners
+﻿namespace TerminalForBeginners
 {
     internal class OptionInfo
     {
         private string _name;
         private string _text;
         private string _description;
-        private bool _textBox;
-        private bool _fileBrowse;
+        private bool _required;
+        private bool _needTextBox;
+        private bool _needBrowseButton;
 
         public string Name
         {
@@ -33,16 +27,22 @@ namespace TerminalForBeginners
             set { _description = value; }
         }
 
-        public bool TextBox
+        public bool Required
         {
-            get { return _textBox; }
-            set { _textBox = value; }
+            get { return _required; }
+            set { _required = value; }
         }
 
-        public bool FileBrowse
+        public bool NeedTextBox
         {
-            get { return _fileBrowse; }
-            set { _fileBrowse = value; }
+            get { return _needTextBox; }
+            set { _needTextBox = value; }
+        }
+
+        public bool NeedBrowseButton
+        {
+            get { return _needBrowseButton; }
+            set { _needBrowseButton = value; }
         }
     }
 }

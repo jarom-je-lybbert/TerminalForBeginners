@@ -73,9 +73,8 @@ namespace TerminalForBeginners.Properties {
         ///                        &quot;Name&quot; : &quot;Directory Path&quot;,
         ///                        &quot;Text&quot; : &quot;&quot;,
         ///                        &quot;Description&quot; : &quot;Path to the desired directory.&quot;,
-        ///                        &quot;TextBox&quot; : true,
-        ///                        &quot;BrowseButton&quot; : true
-        /// [rest of string was truncated]&quot;;.
+        ///                        &quot;Required&quot; : true,
+        ///                        &quot;NeedTextBox&quot; : true,        /// [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string commandData {
             get {

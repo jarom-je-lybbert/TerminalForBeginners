@@ -41,7 +41,7 @@ namespace TerminalForBeginners
             listBox.Items.Clear();
             foreach (var command in _commands)
             {
-                listBox.Items.Add(command.Command);
+                listBox.Items.Add(command);
             }
             listBox.Location = location;
             listBox.Size = size;

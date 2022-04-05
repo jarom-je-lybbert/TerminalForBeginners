@@ -45,5 +45,10 @@ namespace TerminalForBeginners
         {
             _options.Add(newOption);
         }
+
+        public override string ToString()
+        {
+            return Command;
+        }
     }
 }

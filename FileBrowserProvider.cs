@@ -42,12 +42,17 @@ namespace TerminalForBeginners
             }
         }
 
-        public void ReRootTree(string relativePath)
+        public void ReRootTree(string path)
         {
+            path = path.TrimStart();
+            if (!path.Contains(':') && !path.StartsWith("\\") && !path.StartsWith("/"))
+            {
+                path = WorkingDirectory.FullName + '\\' + path;
+            }
             DirectoryInfo info;
             try
             {
-                info = new DirectoryInfo(WorkingDirectory.FullName + '\\' + relativePath);
+                info = new DirectoryInfo(path);
             }
             catch (DirectoryNotFoundException ex)
             { return; }
@@ -83,6 +88,12 @@ namespace TerminalForBeginners
                     catch(UnauthorizedAccessException ex)
                     {
 
+                    }
+                    catch(DirectoryNotFoundException ex)
+                    {
+                        node.Nodes.Remove(childNode);
+                        AddGrandchildNodes(node);
+                        return;
                     }
                 }
             }
